@@ -1,0 +1,21 @@
+{
+  "atom": "Entité",
+  "atoms_add": "Ajouter des entités",
+  "new_department": "Nouveau département",
+  "new_place": "Nouveau Lieu",
+  "new_person": "Nouvelle Personne",
+  "new_symbol": "Nouveau Symbole",
+  "modes": {
+    "discovery": "Mode exploration",
+    "edit": "Mode édition",
+    "notification": "Mode notification"
+  },
+  "place": {
+    "create": "créer un nouveau lieu",
+    "select": "choisir un lieu existant"
+  },
+  "symbol": "Symbole",
+  "symbol_delete_selected": "Supprimer le symbole sélectionné",
+  "symbol_edit_selected": "Modifier le symbole sélectionné",
+  "symbols_add": "Ajouter des symboles"
+}

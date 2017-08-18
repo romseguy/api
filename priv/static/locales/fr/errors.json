@@ -1,0 +1,27 @@
+{
+  "required": "Ce champ est obligatoire",
+  "auth": {
+    "fixForm": "Veuillez corriger le formulaire",
+    "email": "Une adresse e-mail est requise",
+    "email_invalid": "Cette adresse e-mail est invalide",
+    "password": "Un mot de passe est requis",
+    "password_too_short": "Le mot de passe doit comporter au moins 6 caractères",
+    "password2": "La confirmation du mot de passe est requise"
+  },
+  "modal": {
+    "offline": {
+      "title": "Vous êtes hors-ligne",
+      "content": "Veuillez vous connecter à Internet"
+    },
+    "unknown": {
+      "content": "L'administrateur du site a été prévenu",
+      "title": "Une erreur inconnue est survenue"
+    }
+  },
+  "register": {
+    "passwordsNotMatch": "Les mots de passe ne correspondent pas",
+    "unavailable_email": "Cet e-mail est déjà utilisé",
+    "username_too_long": "Ce nom d'utilisateur est trop long",
+    "unavailable_username": "Ce nom d'utilisateur est déjà utilisé"
+  }
+}

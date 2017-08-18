@@ -1,0 +1,18 @@
+{
+  "required": "This field is required",
+  "auth": {
+    "fixForm": "Please correct the form",
+    "email": "E-mail is required",
+    "password": "Password is required",
+    "password2": "Password confirmation is required"
+  },
+  "login": {
+    "headerContent": "Login error",
+    "invalid_credentials": "Incorrect login credentials"
+  },
+  "register": {
+    "headerContent": "Registration error",
+    "unavailable_email": "E-mail is already taken",
+    "passwordsNotMatch": "Passwords do not match"
+  }
+}
