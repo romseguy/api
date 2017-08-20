@@ -23,5 +23,10 @@ defmodule Api.Accounts.Queries do
     field :current_user, type: :user do
       resolve &Resolvers.current/2
     end
+
+    @desc "Get my users"
+    field :my_users, type: list_of(:user) do
+      resolve &Resolvers.my_users/2
+    end
   end
 end

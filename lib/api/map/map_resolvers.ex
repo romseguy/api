@@ -12,11 +12,11 @@ defmodule Api.Map.Resolvers do
   @doc"""
   get all places for current user
   """
-  def myPlaces(_args, %{context: %{current_user: current_user}}) do
-    userPlaces = Api.Accounts.list_user_places(current_user)
-    {:ok, Api.Repo.preload(userPlaces, [:user, :place, :role])}
+  def my_places(_args, %{context: %{current_user: current_user}}) do
+    user_places = Api.Accounts.list_user_places(current_user)
+    {:ok, Api.Repo.preload(user_places, [:user, :place, :role])}
   end
-  def myPlaces(_args, _info) do
+  def my_places(_args, _info) do
     {:ok, nil}
   end
 

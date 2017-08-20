@@ -19,7 +19,7 @@ defmodule Api.Map.Queries do
 
     @desc "Get my places"
     field :my_places, type: list_of(:user_place) do
-      resolve &Resolvers.myPlaces/2
+      resolve &Resolvers.my_places/2
     end
   end
 end
