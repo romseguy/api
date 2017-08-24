@@ -25,16 +25,8 @@ defmodule Api.Accounts.Mutations do
   end
 
   object :accounts_mutations do
-    @desc "Update user"
-    field :update_user, type: :user do
-      arg :id, :integer
-      arg :user, :update_user_attrs
 
-      middleware ApiWeb.Middleware.RequireAuthorized
-      resolve &Resolvers.update/2
-    end
-
-    @desc "Create user place association"
+    @desc "Create user place"
     field :create_user_place, type: :user_place do
       arg :user_place, :create_user_place_attrs
 
@@ -48,6 +40,15 @@ defmodule Api.Accounts.Mutations do
 
       middleware ApiWeb.Middleware.RequireAuthorized
       resolve &Resolvers.delete_user_place/2
+    end
+
+    @desc "Update user"
+    field :update_user, type: :user do
+      arg :id, :integer
+      arg :user, :update_user_attrs
+
+      middleware ApiWeb.Middleware.RequireAuthorized
+      resolve &Resolvers.update/2
     end
 
     @desc "Update user places"

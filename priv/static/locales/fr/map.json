@@ -1,17 +1,30 @@
 {
-  "atom": "Entité",
-  "atoms_add": "Ajouter des entités",
-  "new_department": "Nouveau département",
-  "new_place": "Nouveau Lieu",
-  "new_person": "Nouvelle Personne",
-  "new_symbol": "Nouveau Symbole",
+  "atoms": {
+    "label": "Entité",
+    "add": "Ajouter des entités",
+    "delete_selected": "Supprimer l'entité sélectionnée",
+    "edit_selected": "Modifier l'entité sélectionnée"
+  },
+  "departments": {
+    "new": "Nouveau département"
+  },
   "modes": {
     "discovery": "Mode exploration",
     "edit": "Mode édition",
     "notification": "Mode notification"
   },
-  "symbol": "Symbole",
-  "symbol_delete_selected": "Supprimer le symbole sélectionné",
-  "symbol_edit_selected": "Modifier le symbole sélectionné",
-  "symbols_add": "Ajouter des symboles"
+  "places": {
+    "new": "Nouveau lieu"
+  },
+  "persons": {
+    "new": "Nouvelle Personne"
+  },
+  "symbols": {
+    "add": "Ajouter des symboles",
+    "label": "Symbole",
+    "delete_selected": "Supprimer le symbole sélectionné",
+    "edit_selected": "Modifier le symbole sélectionné",
+    "new": "Nouveau symbole",
+    "new_service": "Nouveau service"
+  }
 }

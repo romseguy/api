@@ -42,15 +42,15 @@ defmodule Api.Accounts do
       iex> get_user!(456)
       ** (Ecto.NoResultsError)
 
-      iex> get_user(%{"email" => "a@b.c"})
+      iex> get_user(%{email: "a@b.c"})
       nil
 
   """
   def get_user!(id), do: Repo.get!(User, id)
-  def get_user(%{"email" => email}) do
+  def get_user(%{email: email}) do
     Repo.get_by(User, email: String.downcase(email))
   end
-  def get_user(%{"username" => username}) do
+  def get_user(%{username: username}) do
     Repo.get_by(User, username: String.downcase(username))
   end
 

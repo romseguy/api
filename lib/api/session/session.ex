@@ -10,7 +10,7 @@ defmodule Api.Session do
   Returns the user associated with `attrs.email` if hashed `attrs.password` matches `user.password_hash`.
   """
   def authenticate(attrs) do
-    user = Accounts.get_user(%{"email" => attrs.email})
+    user = Accounts.get_user(%{email: attrs.email})
 
     case check_password(user, attrs.password) do
       true -> {:ok, user}

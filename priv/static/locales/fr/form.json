@@ -1,13 +1,21 @@
 {
   "place": {
-    "create": "nouveau lieu",
-    "place_name": "nom du lieu :",
-    "select": "lieu existant"
+    "create": "Nouveau lieu",
+    "map": "Cliquez à l'endroit où est situé le lieu :",
+    "name": "Nom du lieu :",
+    "select": "Lieu existant",
+    "save": "Enregister"
+  },
+  "symbol": {
+    "header_add": "Connecter un Symbole à mon Présent",
+    "name": "Nom du symbole :",
+    "save": "Enregister"
   },
   "user": {
-    "create": "nouvel utilisateur",
+    "create": "Nouvel utilisateur",
     "header_add": "Connecter une Personne à mon Présent",
     "header_edit": "Modifier",
-    "select": "utilisateur existant"
+    "select": "Utilisateur existant",
+    "save": "Enregister"
   }
 }

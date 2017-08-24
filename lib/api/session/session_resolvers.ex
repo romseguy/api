@@ -21,7 +21,7 @@ defmodule Api.Session.Resolvers do
       {:ok, %{token: jwt}}
     else
       {:error, changeset} ->
-        # todo: translation?
+        # todo: translation
         errorMap = Ecto.Changeset.traverse_errors(changeset, &translate_error/1)
 
         errorMessages = Enum.map(errorMap, fn error ->

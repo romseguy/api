@@ -7,7 +7,9 @@ defmodule Api.Accounts.User do
     User,
     UserPlace
   }
-  alias Api.Map.Place
+  alias Api.Map.{
+    Place
+  }
 
 
   @doc"""
