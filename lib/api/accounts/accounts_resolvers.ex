@@ -1,8 +1,18 @@
 defmodule Api.Accounts.Resolvers do
   import Logger
 
+  def create_followee(%{followee: followee}, %{context: %{current_user: %{id: current_user_id}}}) do
+    Api.Accounts.create_user_user(Map.put_new(followee, :user_id, current_user_id))
+  end
+  def create_followee(%{id: user_id, followee: followee}, %{context: %{current_user: %{id: current_user_id}}}) do
+    Api.Accounts.create_user_user(Map.put_new(followee, :user_id, user_id))
+  end
+
   def create_user_place(%{user_place: user_place}, %{context: %{current_user: %{id: current_user_id}}}) do
     Api.Accounts.create_user_place(Map.put_new(user_place, :user_id, current_user_id))
+  end
+  def create_user_place(%{id: user_id, user_place: user_place}, %{context: %{current_user: %{id: current_user_id}}}) do
+    Api.Accounts.create_user_place(Map.put_new(user_place, :user_id, user_id))
   end
 
   def current(_args, %{context: %{current_user: %{id: current_user_id}}}) do
@@ -18,6 +28,10 @@ defmodule Api.Accounts.Resolvers do
     Logger.debug(inspect(user_place))
     Api.Accounts.delete_user_place(user_place)
     {:ok, user_place}
+  end
+
+  def my_followees(_args, %{context: %{current_user: %{id: current_user_id}}}) do
+    {:ok, Api.Accounts.list_user_users(current_user_id)}
   end
 
   @doc"""
@@ -58,6 +72,9 @@ defmodule Api.Accounts.Resolvers do
   end
   def user(%{username: username}, %{context: %{current_user: %{id: current_user_id}}}) do
     {:ok, Api.Accounts.get_user(%{username: username})}
+  end
+  def user(_args, _info) do
+    {:error, "user not found"}
   end
 
   @doc"""

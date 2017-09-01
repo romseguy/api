@@ -5,7 +5,8 @@ defmodule Api.Accounts.User do
 
   alias Api.Accounts.{
     User,
-    UserPlace
+    UserPlace,
+    UserUser
   }
   alias Api.Map.{
     Place
@@ -23,6 +24,7 @@ defmodule Api.Accounts.User do
     field :password_hash, :string
     field :username, :string
     many_to_many :places, Place, join_through: UserPlace
+    has_many :user_users, UserUser
 
     timestamps()
   end

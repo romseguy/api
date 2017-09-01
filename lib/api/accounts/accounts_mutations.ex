@@ -24,14 +24,30 @@ defmodule Api.Accounts.Mutations do
     field :y, non_null(:float)
   end
 
+  input_object :create_followee_attrs do
+    field :followee_id, non_null(:integer)
+    field :x, non_null(:float)
+    field :y, non_null(:float)
+  end
+
   object :accounts_mutations do
 
     @desc "Create user place"
     field :create_user_place, type: :user_place do
+      arg :id, :integer
       arg :user_place, :create_user_place_attrs
 
       middleware ApiWeb.Middleware.RequireAuthorized
       resolve &Resolvers.create_user_place/2
+    end
+
+    @desc "Create followee"
+    field :create_followee, type: :user_user do
+      arg :id, :integer
+      arg :followee, :create_followee_attrs
+
+      middleware ApiWeb.Middleware.RequireAuthorized
+      resolve &Resolvers.create_followee/2
     end
 
     @desc "Delete user place"

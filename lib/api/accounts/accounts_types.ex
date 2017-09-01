@@ -47,4 +47,12 @@ defmodule Api.Accounts.Types do
     field :y, :string
     field :inserted_at, :string
   end
+
+  object :user_user do
+    field :id, :integer
+    field :followee, :integer
+    field :x, :string
+    field :y, :string
+    field :inserted_at, :string
+  end
 end

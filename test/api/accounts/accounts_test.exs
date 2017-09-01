@@ -18,7 +18,8 @@ defmodule Api.Accounts.Test do
 
     test "list_users/0 returns all users", fixture do
       user = fixture.user
-      assert Api.Accounts.list_users() == [user]
+      user2 = fixture.user2
+      assert Api.Accounts.list_users() == [user, user2]
     end
 
     test "get_user!/1 returns the user with given id", fixture do
@@ -112,6 +113,51 @@ defmodule Api.Accounts.Test do
 
     test "change_user_place/1 returns a user_place changeset", fixture do
       assert %Ecto.Changeset{} = Api.Accounts.change_user_place(fixture.userplace)
+    end
+  end
+  
+  describe "user_users" do
+    alias Api.Accounts.UserUser
+
+    @invalid_attrs %{user_id: nil, place_id: nil}
+
+    setup do
+      Api.Helpers.setup
+    end
+
+    test "list_user_users/0 returns all user_users", fixture do
+      assert Api.Accounts.list_user_users() == [fixture.useruser]
+    end
+
+    test "get_user_user!/1 returns the user_user with given id", fixture do
+      assert Api.Accounts.get_user_user!(fixture.useruser.id) == fixture.useruser
+    end
+
+    test "create_user_user/1 with valid data creates a user_user", fixture do
+      assert {:ok, %UserUser{} = user_user} = Api.Accounts.create_user_user(%{user_id: fixture.user.id, place_id: fixture.place2.id, role_id: fixture.role.id})
+    end
+
+    test "create_user_user/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Api.Accounts.create_user_user(@invalid_attrs)
+    end
+
+    test "update_user_user/2 with valid data updates the user_user", fixture do
+      assert {:ok, user_user} = Api.Accounts.update_user_user(fixture.useruser, %{place_id: fixture.place2.id})
+      assert %UserUser{} = user_user
+    end
+
+    test "update_user_user/2 with invalid data returns error changeset", fixture do
+      assert {:error, %Ecto.Changeset{}} = Api.Accounts.update_user_user(fixture.useruser, @invalid_attrs)
+      assert fixture.useruser == Api.Accounts.get_user_user!(fixture.useruser.id)
+    end
+
+    test "delete_user_user/1 deletes the user_user", fixture do
+      assert {:ok, %UserUser{}} = Api.Accounts.delete_user_user(fixture.useruser)
+      assert_raise Ecto.NoResultsError, fn -> Api.Accounts.get_user_user!(fixture.useruser.id) end
+    end
+
+    test "change_user_user/1 returns a user_user changeset", fixture do
+      assert %Ecto.Changeset{} = Api.Accounts.change_user_user(fixture.useruser)
     end
   end
 

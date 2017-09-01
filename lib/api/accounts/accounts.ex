@@ -7,6 +7,7 @@ defmodule Api.Accounts do
   alias Api.Repo
 
   alias Api.Accounts.{
+    UserUser,
     User,
     UserPlace,
     Role
@@ -234,6 +235,117 @@ defmodule Api.Accounts do
   """
   def change_user_place(%UserPlace{} = user_place) do
     UserPlace.changeset(user_place, %{})
+  end
+
+  @doc """
+  Returns the list of user_users.
+
+  ## Examples
+
+      iex> list_user_users()
+      [%UserUser{}, ...]
+
+  """
+  def list_user_users do
+    Repo.all(UserUser)
+  end
+  def list_user_users(user_id) when is_integer(user_id) do
+    UserUser
+    |> where(user_id: ^user_id)
+    |> Repo.all
+  end
+  def list_user_users(%User{} = user) do
+    list_user_users(user.id)
+  end
+
+  @doc """
+  Gets a single user_user.
+
+  Raises `Ecto.NoResultsError` if the User place does not exist.
+
+  ## Examples
+
+      iex> get_user_user!(123)
+      %UserUser{}
+
+      iex> get_user_user!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_user_user!(id), do: Repo.get!(UserUser, id)
+  def get_user_user!(user_id, place_id) when is_integer(user_id) and is_integer(place_id) do
+    UserUser
+    |> where(place_id: ^place_id)
+    |> where(user_id: ^user_id)
+    |> Repo.one!
+  end
+  def get_user_user!(%User{} = user, %Place{} = place) do
+    get_user_user!(user.id, place.id)
+  end
+
+  @doc """
+  Creates a user_user.
+
+  ## Examples
+
+      iex> create_user_user(%{field: value})
+      {:ok, %UserUser{}}
+
+      iex> create_user_user(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_user_user(attrs \\ %{}) do
+    %UserUser{}
+    |> UserUser.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a user_user.
+
+  ## Examples
+
+      iex> update_user_user(user_user, %{field: new_value})
+      {:ok, %UserUser{}}
+
+      iex> update_user_user(user_user, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_user_user(%UserUser{} = user_user, attrs) do
+    user_user
+    |> UserUser.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a UserUser.
+
+  ## Examples
+
+      iex> delete_user_user(user_user)
+      {:ok, %UserUser{}}
+
+      iex> delete_user_user(user_user)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_user_user(%UserUser{} = user_user) do
+    Repo.delete(user_user)
+  end
+ 
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking user_user changes.
+
+  ## Examples
+
+      iex> change_user_user(user_user)
+      %Ecto.Changeset{source: %UserUser{}}
+
+  """
+  def change_user_user(%UserUser{} = user_user) do
+    UserUser.changeset(user_user, %{})
   end
 
   @doc """

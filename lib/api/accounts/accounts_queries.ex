@@ -14,10 +14,15 @@ defmodule Api.Accounts.Queries do
     @desc "Get user by attribute"
     field :user, type: :user do
       arg :id, :integer
-      arg :username, :integer
+      arg :username, :string
 
       middleware ApiWeb.Middleware.RequireAuthorized
       resolve &Resolvers.user/2
+    end
+
+    @desc "Get followees of current or given user"
+    field :my_followees, type: list_of(:user_user) do
+    resolve &Resolvers.my_followees/2
     end
 
     @desc "Get all users"
