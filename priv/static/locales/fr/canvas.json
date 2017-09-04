@@ -52,5 +52,8 @@
     "label": "Symbole",
     "new": "Nouveau symbole",
     "new_service": "Nouveau service"
+  },
+  "tooltips": {
+    "place_edit_disabled": "Vous ne pouvez pas modifier ce lieu car vous n'êtes pas un gardien"
   }
 }

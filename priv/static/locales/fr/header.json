@@ -1,6 +1,15 @@
 {
+  "current_position": "Votre position actuelle",
+  "icon_title": "Cliquez pour revenir à votre position",
+  "login": "connexion",
+  "logout": "déconnexion",
+  "map": "carte",
+  "my_profile": "mon profil",
+  "place_profile": "profil du lieu :",
+  "title": "Cliquez pour changer votre position",
+  "user_profile": "profil de l'utilisateur :",
   "role": {
-    "1": "Gardien de",
-    "2": "Membre de"
+    "1": "gardien de",
+    "2": "membre de"
   }
 }

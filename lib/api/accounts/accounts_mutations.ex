@@ -14,20 +14,20 @@ defmodule Api.Accounts.Mutations do
   input_object :create_user_place_attrs do
     field :place_id, non_null(:integer)
     field :role_id, non_null(:integer)
-    field :x, non_null(:float)
-    field :y, non_null(:float)
+    field :x, :float
+    field :y, :float
   end
 
   input_object :update_user_places_attrs do
     field :place_id, non_null(:integer)
-    field :x, non_null(:float)
-    field :y, non_null(:float)
+    field :x, :float
+    field :y, :float
   end
 
   input_object :create_followee_attrs do
     field :followee_id, non_null(:integer)
-    field :x, non_null(:float)
-    field :y, non_null(:float)
+    field :x, :float
+    field :y, :float
   end
 
   object :accounts_mutations do

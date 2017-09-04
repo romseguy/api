@@ -11,6 +11,7 @@ defmodule Api.Map.Resolvers do
       "place_id": place.id,
       "role_id": 1
     })
+    {:ok, place}
   end
 
   @doc"""

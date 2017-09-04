@@ -32,12 +32,14 @@ defmodule Api.Map.Place do
   def create_changeset(%Place{} = place, attrs \\ %{}) do
     place
     |> cast(attrs, [:city, :department, :latitude, :longitude, :title])
-    |> validate_required([:title, :latitude, :longitude])
+    |> validate_required([:city, :department, :latitude, :longitude, :title])
+    |> unique_constraint(:title, message: "Place name already taken")
   end
 
   def update_changeset(%Place{} = place, attrs \\ %{}) do
     place
     |> cast(attrs, [:city, :department, :latitude, :longitude, :title])
     |> validate_required([:title])
+    |> unique_constraint(:title, message: "Place name already taken")
   end
 end

@@ -1,8 +1,21 @@
 {
+  "auth": {
+    "department_confirm": "Veuillez sélectionner votre département principal :",
+    "email": "Adresse e-mail",
+    "forgotten": "Mot de passe oublié ?",
+    "forgotten_confirm": "Recevoir un e-mail de réinitialisation de mot de passe",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "password": "Mot de passe",
+    "password2": "Confirmation",
+    "register": "Inscription",
+    "username": "Nom d'utilisateur"
+  },
   "place": {
+    "city": "Sélectionnez la ville où se situe le lieu :",
     "create": "Nouveau lieu",
     "header_add": "Connecter un lieu",
-    "map": "Cliquez à l'endroit où est situé le lieu :",
+    "map": "(Optionnel) Cliquez à l'endroit où est situé le lieu :",
     "name": "Nom du lieu :",
     "select": "Lieu existant",
     "save": "Enregister"
@@ -25,6 +38,9 @@
     },
     "header_add": "Connecter une personne",
     "header_edit": "Modifier",
-    "select": "Utilisateur existant"
+    "select": {
+      "label": "Utilisateur existant",
+      "save": "Connecter"
+    }
   }
 }
