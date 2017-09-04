@@ -15,13 +15,13 @@ use Mix.Config
 # which you typically run after static files are built.
 config :api, ApiWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "83.206.209.106", port: System.get_env("PORT")],
+  url: [host: System.get_env("HOST"), port: System.get_env("PORT")],
   https: [:inet6,
           port: System.get_env("PORT"),
           keyfile: System.get_env("SSL_KEY_PATH"),
           certfile: System.get_env("SSL_CRT_PATH")],
   force_ssl: [hsts: true],
-  secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
   # cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
