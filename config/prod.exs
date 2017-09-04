@@ -16,20 +16,26 @@ use Mix.Config
 config :api, ApiWeb.Endpoint,
   load_from_system_env: true,
   url: [host: "83.206.209.106", port: 443],
-  https: [:inet6, port: 443, keyfile: System.get_env("priv/ssl/server.key"), certfile: System.get_env("priv/ssl/server.cert")],
+  https: [:inet6,
+          port: 443,
+          keyfile: System.get_env("SSL_KEY_PATH"),
+          certfile: System.get_env("SSL_CRT_PATH")],
   force_ssl: [hsts: true],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
   # cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :info
+config :logger, leveG: :info
 
 # Configure your database
 config :api, Api.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true
+  username: System.get_env("DATA_DB_USER"),
+  password: System.get_env("DATA_DB_PASS"),
+  hostname: System.get_env("DATA_DB_HOST"),
+  database: "api",
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20")
 
 # ## SSL Support
 #
@@ -68,6 +74,9 @@ config :api, Api.Repo,
 #
 #     config :api, ApiWeb.Endpoint, server: true
 #
+
+config :guardian, Guardian,
+  secret_key: System.get_env("SECRET_KEY_BASE") # The key to sign the tokens
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
