@@ -10,7 +10,8 @@ config :api, ApiWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  check_origin: false
+  check_origin: false,
+  secret_key_base: "J5u3lcy5VkvYgZgDwGSN0ueoIWqF+BsQ2yU5dwHhS5Ev3w0AXNazk/mIdK7P5huJ"
 
 # ## SSL Support
 #
@@ -52,3 +53,6 @@ config :api, Api.Repo,
   database: "api_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :guardian, Guardian,
+  secret_key: "J5u3lcy5VkvYgZgDwGSN0ueoIWqF+BsQ2yU5dwHhS5Ev3w0AXNazk/mIdK7P5huJ" # The key to sign the tokens
