@@ -18,8 +18,8 @@ config :api, ApiWeb.Endpoint,
   url: [host: "83.206.209.106", port: 443],
   https: [:inet6,
           port: 443,
-          keyfile: Map.fetch!(System.get_env(), "SSL_KEY_PATH"),
-          certfile: Map.fetch!(System.get_env(), "SSL_CRT_PATH")],
+          keyfile: System.get_env("SSL_KEY_PATH"),
+          certfile: System.get_env("SSL_CRT_PATH")],
   force_ssl: [hsts: true],
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
   # cache_static_manifest: "priv/static/cache_manifest.json"
@@ -35,7 +35,7 @@ config :api, Api.Repo,
   password: System.get_env("DATA_DB_PASS"),
   hostname: System.get_env("DATA_DB_HOST"),
   database: "api",
-  pool_size: String.to_integer(Map.fetch!(System.get_env(), "POOL_SIZE") || "20")
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "20")
 
 # ## SSL Support
 #
@@ -76,7 +76,7 @@ config :api, Api.Repo,
 #
 
 config :guardian, Guardian,
-  secret_key: Map.fetch!(System.get_env(), "SECRET_KEY_BASE") # The key to sign the tokens
+  secret_key: System.get_env("SECRET_KEY_BASE") # The key to sign the tokens
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
