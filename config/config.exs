@@ -11,7 +11,6 @@ config :api,
 
 # Configures the endpoint
 config :api, ApiWeb.Endpoint,
-  url: [host: "localhost"],
   render_errors: [view: ApiWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Api.PubSub,
            adapter: Phoenix.PubSub.PG2]
