@@ -16,6 +16,19 @@ defmodule ApiWeb do
   below. Instead, define any helper function in modules
   and import those modules here.
   """
+  def view do
+    quote do
+      use Phoenix.View, root: "lib/api_web/templates",
+                        namespace: ApiWeb
+
+      # Import convenience functions from controllers
+      import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
+
+      import ApiWeb.Router.Helpers
+      import ApiWeb.ErrorHelpers
+      import ApiWeb.Gettext
+    end
+  end
 
   def router do
     quote do
