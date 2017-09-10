@@ -3,10 +3,12 @@ defmodule Api.Map.Place do
   import Ecto.Changeset
 
   alias Api.Accounts.{
-    User,
+    User
+  }
+  alias Api.Map.{
+    Place,
     UserPlace
   }
-  alias Api.Map.Place
 
 
   @doc"""

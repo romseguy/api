@@ -5,11 +5,11 @@ defmodule Api.Accounts.User do
 
   alias Api.Accounts.{
     User,
-    UserPlace,
     UserUser
   }
   alias Api.Map.{
-    Place
+    Place,
+    UserPlace
   }
 
 

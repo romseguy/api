@@ -1,6 +1,5 @@
 {
   "current_position": "Votre position actuelle",
-  "icon_title": "Cliquez pour revenir à votre position",
   "login": "connexion",
   "logout": "déconnexion",
   "map": "carte",
@@ -8,6 +7,22 @@
   "place_profile": "profil du lieu :",
   "title": "Cliquez pour changer votre position",
   "user_profile": "profil de l'utilisateur :",
+  "atom": {
+    "title": {
+      "default": ""
+    }
+  },
+  "connect": {
+    "title": {
+      "place": "Cliquez pour vous connecter à ce lieu"
+    }
+  },
+  "location": {
+    "title": {
+      "default": "Cliquez pour revenir à votre position",
+      "place": "Cliquez pour afficher ce lieu sur la carte"
+    }
+  },
   "role": {
     "1": "gardien de",
     "2": "membre de"

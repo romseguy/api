@@ -29,6 +29,7 @@ defmodule Api.Accounts.Types do
     #end
   end
 
+  @desc "user"
   object :user do
     field :id, :integer
     field :username, :string
@@ -38,6 +39,13 @@ defmodule Api.Accounts.Types do
     field :places, list_of(:place), resolve: assoc(:places)
   end
 
+  input_object :update_user_attrs do
+    field :username, :string
+    field :email, :string
+    field :password, :string
+  end
+
+  @desc "user_place"
   object :user_place do
     field :id, :integer
     field :user, :user
@@ -48,11 +56,31 @@ defmodule Api.Accounts.Types do
     field :inserted_at, :string
   end
 
+  input_object :create_user_place_attrs do
+    field :place_id, non_null(:integer)
+    field :role_id, non_null(:integer)
+    field :x, :float
+    field :y, :float
+  end
+
+  input_object :update_user_places_attrs do
+    field :place_id, non_null(:integer)
+    field :x, :float
+    field :y, :float
+  end
+
+  @desc "user_user"
   object :user_user do
     field :id, :integer
     field :followee, :integer
     field :x, :string
     field :y, :string
     field :inserted_at, :string
+  end
+
+  input_object :create_user_user_attrs do
+    field :followee_id, non_null(:integer)
+    field :x, :float
+    field :y, :float
   end
 end

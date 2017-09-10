@@ -1,42 +1,36 @@
 defmodule Api.Accounts.Queries do
   use Absinthe.Schema.Notation
-  alias Api.{
-    Accounts.Resolvers
-  }
+  alias Api.Accounts.Resolvers
+  alias ApiWeb.Middleware.RequireAuthorized
+
 
   object :accounts_queries do
-
-    @desc "Get the currently signed in user, or nil"
+    @doc"""
+    User
+    """
+    @desc "QUERY the current user"
     field :current_user, type: :user do
       resolve &Resolvers.current/2
     end
-
-    @desc "Get user by attribute"
+    @desc "QUERY an user"
     field :user, type: :user do
       arg :id, :integer
       arg :username, :string
 
-      middleware ApiWeb.Middleware.RequireAuthorized
+      middleware RequireAuthorized
       resolve &Resolvers.user/2
     end
-
-    @desc "Get followees of current or given user"
-    field :my_followees, type: list_of(:user_user) do
-    resolve &Resolvers.my_followees/2
-    end
-
-    @desc "Get all users"
+    @desc "QUERY all users"
     field :users, type: list_of(:user) do
-      middleware ApiWeb.Middleware.RequireAuthorized
+      middleware RequireAuthorized
       resolve &Resolvers.users/2
     end
-
     @doc"""
-    @desc "Get my users"
-    field :my_users, type: list_of(:user) do
-      resolve &Resolvers.my_users/2
-    end
+    UserUser
     """
-
+    @desc "QUERY my relatives"
+    field :my_relatives, type: list_of(:user_user) do
+    resolve &Resolvers.my_user_users/2
+    end
   end
 end

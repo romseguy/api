@@ -1,13 +1,13 @@
-defmodule Api.Accounts.UserPlace do
+defmodule Api.Map.UserPlace do
   use Ecto.Schema
   import Ecto.Changeset
   alias Api.Accounts.{
     User,
-    UserPlace,
     Role
   }
   alias Api.Map.{
-    Place
+    Place,
+    UserPlace
   }
 
 

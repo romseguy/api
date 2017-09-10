@@ -62,4 +62,49 @@ defmodule Api.MapTest do
       assert %Ecto.Changeset{} = Map.change_place(place)
     end
   end
+
+  describe "user_places" do
+    alias Api.Map.UserPlace
+
+    @invalid_attrs %{user_id: nil, place_id: nil}
+
+    setup do
+      Api.Helpers.setup
+    end
+
+    test "list_user_places/0 returns all user_places", fixture do
+      assert Api.Map.list_user_places() == [fixture.userplace]
+    end
+
+    test "get_user_place!/1 returns the user_place with given id", fixture do
+      assert Api.Map.get_user_place!(fixture.userplace.id) == fixture.userplace
+    end
+
+    test "create_user_place/1 with valid data creates a user_place", fixture do
+      assert {:ok, %UserPlace{} = user_place} = Api.Map.create_user_place(%{user_id: fixture.user.id, place_id: fixture.place2.id, role_id: fixture.role.id})
+    end
+
+    test "create_user_place/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Api.Map.create_user_place(@invalid_attrs)
+    end
+
+    test "update_user_place/2 with valid data updates the user_place", fixture do
+      assert {:ok, user_place} = Api.Map.update_user_place(fixture.userplace, %{place_id: fixture.place2.id})
+      assert %UserPlace{} = user_place
+    end
+
+    test "update_user_place/2 with invalid data returns error changeset", fixture do
+      assert {:error, %Ecto.Changeset{}} = Api.Map.update_user_place(fixture.userplace, @invalid_attrs)
+      assert fixture.userplace == Api.Map.get_user_place!(fixture.userplace.id)
+    end
+
+    test "delete_user_place/1 deletes the user_place", fixture do
+      assert {:ok, %UserPlace{}} = Api.Map.delete_user_place(fixture.userplace)
+      assert_raise Ecto.NoResultsError, fn -> Api.Map.get_user_place!(fixture.userplace.id) end
+    end
+
+    test "change_user_place/1 returns a user_place changeset", fixture do
+      assert %Ecto.Changeset{} = Api.Accounts.change_user_place(fixture.userplace)
+    end
+  end
 end

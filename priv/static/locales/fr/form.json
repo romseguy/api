@@ -1,4 +1,5 @@
 {
+  "failed_loading": "Le formulaire n'a pu être chargé, êtes vous connecté à Internet ?",
   "auth": {
     "department_confirm": "Veuillez sélectionner votre département principal :",
     "email": "Adresse e-mail",
@@ -15,14 +16,17 @@
     "city": "Sélectionnez la ville où se situe le lieu :",
     "create": "Nouveau lieu",
     "header_add": "Connecter un lieu",
+    "header_edit": "Modifier",
     "map": "(Optionnel) Cliquez à l'endroit où est situé le lieu :",
     "name": "Nom du lieu :",
     "select": "Lieu existant",
-    "save": "Enregister"
+    "save": "Enregister",
+    "select_save": "Connecter",
+    "select_view": "Aller au profil du lieu"
   },
   "setLocation": {
-    "city": "",
     "header": "Définissez votre position",
+    "city": "Choisissez la ville ou le village où vous êtes",
     "map": "Cliquez à l'endroit où est situé le lieu :",
     "save": "Enregistrer"
   },

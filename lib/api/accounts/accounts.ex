@@ -9,7 +9,6 @@ defmodule Api.Accounts do
   alias Api.Accounts.{
     UserUser,
     User,
-    UserPlace,
     Role
   }
 
@@ -122,122 +121,6 @@ defmodule Api.Accounts do
   end
 
   @doc """
-  Returns the list of user_places.
-
-  ## Examples
-
-      iex> list_user_places()
-      [%UserPlace{}, ...]
-
-  """
-  def list_user_places do
-    Repo.all(UserPlace)
-  end
-  def list_user_places(user_id) when is_integer(user_id) do
-    UserPlace
-    |> where(user_id: ^user_id)
-    |> Repo.all
-  end
-  def list_user_places(%User{} = user) do
-    list_user_places(user.id)
-  end
-  def list_user_places(%Place{} = place) do
-    UserPlace
-    |> where(place_id: ^place.id)
-    |> Repo.all
-  end
-
-  @doc """
-  Gets a single user_place.
-
-  Raises `Ecto.NoResultsError` if the User place does not exist.
-
-  ## Examples
-
-      iex> get_user_place!(123)
-      %UserPlace{}
-
-      iex> get_user_place!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_user_place!(id), do: Repo.get!(UserPlace, id)
-  def get_user_place!(user_id, place_id) when is_integer(user_id) and is_integer(place_id) do
-    UserPlace
-    |> where(place_id: ^place_id)
-    |> where(user_id: ^user_id)
-    |> Repo.one!
-  end
-  def get_user_place!(%User{} = user, %Place{} = place) do
-    get_user_place!(user.id, place.id)
-  end
-
-  @doc """
-  Creates a user_place.
-
-  ## Examples
-
-      iex> create_user_place(%{field: value})
-      {:ok, %UserPlace{}}
-
-      iex> create_user_place(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_user_place(attrs \\ %{}) do
-    %UserPlace{}
-    |> UserPlace.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a user_place.
-
-  ## Examples
-
-      iex> update_user_place(user_place, %{field: new_value})
-      {:ok, %UserPlace{}}
-
-      iex> update_user_place(user_place, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_user_place(%UserPlace{} = user_place, attrs) do
-    user_place
-    |> UserPlace.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Deletes a UserPlace.
-
-  ## Examples
-
-      iex> delete_user_place(user_place)
-      {:ok, %UserPlace{}}
-
-      iex> delete_user_place(user_place)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_user_place(%UserPlace{} = user_place) do
-    Repo.delete(user_place)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking user_place changes.
-
-  ## Examples
-
-      iex> change_user_place(user_place)
-      %Ecto.Changeset{source: %UserPlace{}}
-
-  """
-  def change_user_place(%UserPlace{} = user_place) do
-    UserPlace.changeset(user_place, %{})
-  end
-
-  @doc """
   Returns the list of user_users.
 
   ## Examples
@@ -273,14 +156,13 @@ defmodule Api.Accounts do
 
   """
   def get_user_user!(id), do: Repo.get!(UserUser, id)
-  def get_user_user!(user_id, place_id) when is_integer(user_id) and is_integer(place_id) do
+  def get_user_user!(user_id) when is_integer(user_id) do
     UserUser
-    |> where(place_id: ^place_id)
     |> where(user_id: ^user_id)
     |> Repo.one!
   end
-  def get_user_user!(%User{} = user, %Place{} = place) do
-    get_user_user!(user.id, place.id)
+  def get_user_user!(%User{} = user) do
+    get_user_user!(user.id)
   end
 
   @doc """

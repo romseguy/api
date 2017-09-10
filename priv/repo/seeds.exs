@@ -12,11 +12,11 @@
 alias Api.Repo
 alias Api.Accounts.{
   Role,
-  User,
-  UserPlace
+  User
 }
 alias Api.Map.{
-  Place
+  Place,
+  UserPlace
 }
 
 Api.Accounts.create_user(%{
@@ -47,12 +47,12 @@ Repo.insert!(%Role{
   :role_name => "Follower"
 })
 
-Api.Accounts.create_user_place(%{
+Api.Map.create_user_place(%{
   user_id: 1,
   place_id: 1,
   role_id: 1
 })
-Api.Accounts.create_user_place(%{
+Api.Map.create_user_place(%{
   user_id: 1,
   place_id: 2,
   role_id: 2
