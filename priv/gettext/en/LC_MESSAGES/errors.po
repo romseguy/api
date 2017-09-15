@@ -6,9 +6,13 @@
 ##
 ## Use `mix gettext.extract --merge` or `mix gettext.merge`
 ## to merge POT files into PO files.
+
 msgid ""
 msgstr ""
 "Language: en\n"
+
+msgid "title"
+msgstr ""
 
 ## From Ecto.Changeset.cast/4
 msgid "can't be blank"
@@ -17,6 +21,10 @@ msgstr ""
 ## From Ecto.Changeset.unique_constraint/3
 msgid "has already been taken"
 msgstr ""
+
+## From Ecto.Changeset.unique_constraint/3
+msgid "place name has already been taken"
+msgstr "place name \"%{value}\" has already been taken"
 
 ## From Ecto.Changeset.put_change/3
 msgid "is invalid"

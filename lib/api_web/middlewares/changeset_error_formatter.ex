@@ -1,7 +1,11 @@
+require IEx
 defmodule ApiWeb.Middleware.ChangesetErrorFormatter do
+  import ApiWeb.ErrorHelpers
+
   def call(%{errors: []} = res, _), do: res
   def call(%{errors: errors} = res, _) do
-    %{res | errors: format_changeset_error(errors)}
+    formatted_errors = format_changeset_error(errors)
+    %{res | errors: formatted_errors}
   end
 
   def format_changeset_error(errors) when is_list(errors) do
@@ -26,9 +30,11 @@ defmodule ApiWeb.Middleware.ChangesetErrorFormatter do
   def field_errors_to_error(changeset, field, errors) do
     field_name = Atom.to_string(field)
     Enum.map(errors, fn error ->
+      value = error_field_value(changeset, field)
       %{
-        message: field_name <> " " <> error,
-        value: error_field_value(changeset, field)
+        field_name: field_name,
+        message: translate_error({error, value: value}),
+        value: value
       }
     end)
   end

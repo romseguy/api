@@ -32,13 +32,16 @@ defmodule Api.Map.Resolvers do
     CREATE place
     """
     def create(%{place: place_attrs}, %{context: %{current_user: %{id: current_user_id}}}) do
-      {:ok, place} = Api.Map.create_place(place_attrs)
-      Api.Map.create_user_place(%{
-        "user_id": current_user_id,
-        "place_id": place.id,
-        "role_id": 1
-      })
-      {:ok, place}
+      case Api.Map.create_place(place_attrs) do
+        {:ok, place} ->
+          Api.Map.create_user_place(%{
+            "user_id": current_user_id,
+            "place_id": place.id,
+            "role_id": 1
+          })
+          {:ok, place}
+        {:error, changeset} -> {:error, changeset}
+      end
     end
     @doc"""
     UPDATE place if current user belongs to it and is a guardian
@@ -92,7 +95,7 @@ defmodule Api.Map.Resolvers do
     @doc"""
     QUERY user_places by username
     """
-    def my_user_places(%{username: username}, %{context: %{current_user: %{id: current_user_id}}}) do
+    def my_user_places(%{username: username}, %{context: %{current_user: current_user}}) do
       user = Api.Accounts.get_user(%{username: username})
       user_places = Api.Map.list_user_places(user)
       {:ok, Api.Repo.preload(user_places, [:user, :place, :role])}

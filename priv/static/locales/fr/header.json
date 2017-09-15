@@ -3,10 +3,9 @@
   "login": "connexion",
   "logout": "déconnexion",
   "map": "carte",
-  "my_profile": "mon profil",
-  "place_profile": "profil du lieu :",
+  "my_profile": "Vous êtes sur le profil de votre perroquet",
   "title": "Cliquez pour changer votre position",
-  "user_profile": "profil de l'utilisateur :",
+  "tutorial": "tutoriel",
   "atom": {
     "title": {
       "default": ""
@@ -15,6 +14,13 @@
   "connect": {
     "title": {
       "place": "Cliquez pour vous connecter à ce lieu"
+    }
+  },
+  "entityIcon": {
+    "title": {
+      "city": "Vous êtes sur le profil du perroquet appartement à :",
+      "person": "Vous êtes sur le profil du perroquet appartenant à :",
+      "place": "Vous êtes sur le profil du perroquet appartenant à :"
     }
   },
   "location": {

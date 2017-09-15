@@ -11,6 +11,6 @@ defmodule Api.Repo.Migrations.CreateApi.Map.Schema.Place do
 
       timestamps()
     end
-
+    create index(:places, [:title], unique: true)
   end
 end

@@ -8,6 +8,9 @@
     "password_too_short": "Le mot de passe doit comporter au moins 6 caractères",
     "password2": "La confirmation du mot de passe est requise"
   },
+  "place": {
+    "fixForm": "Veuillez corriger le formulaire"
+  },
   "modal": {
     "offline": {
       "title": "Vous êtes hors-ligne",

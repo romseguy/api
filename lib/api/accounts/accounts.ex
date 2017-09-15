@@ -155,8 +155,8 @@ defmodule Api.Accounts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user_user!(id), do: Repo.get!(UserUser, id)
-  def get_user_user!(user_id) when is_integer(user_id) do
+  def get_user_user!(id) when is_integer(id), do: Repo.get!(UserUser, id)
+  def get_user_user!(%{user_id: user_id}) do
     UserUser
     |> where(user_id: ^user_id)
     |> Repo.one!

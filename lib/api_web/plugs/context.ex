@@ -3,10 +3,9 @@ defmodule ApiWeb.Context do
 
   import Plug.Conn
 
-
   def init(opts), do: opts
 
-  def call(conn, _) do
+  def call(conn, _opts) do
     case Guardian.Plug.current_resource(conn) do
       nil -> conn
       user ->

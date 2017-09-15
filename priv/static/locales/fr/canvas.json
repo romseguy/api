@@ -1,10 +1,22 @@
 {
-  "atoms": {
+  "entities": {
     "label": "Entité",
     "add": "connecter des entités",
     "delete_selected": "Supprimer l'entité sélectionnée",
     "edit_selected": "Modifier l'entité sélectionnée",
-    "delete_confirm": "Veuillez confirmer la suppression de l'entité :"
+    "delete_confirm": "Veuillez confirmer la suppression de l'entité :",
+    "city": {
+      "new": "Nouvelle ville"
+    },
+    "department": {
+      "new": "Nouveau département"
+    },
+    "person": {
+      "new": "Nouvelle personne"
+    },
+    "place": {
+      "new": "Nouveau lieu"
+    }
   },
   "buttons": {
     "delete_selected_entity": "Supprimer l'entité sélectionné",
@@ -14,9 +26,6 @@
     "help": "Afficher l'aide",
     "zoom_in": "Zoomer",
     "zoom_out": "Dézoomer"
-  },
-  "departments": {
-    "new": "Nouveau département"
   },
   "modes": {
     "discovery": {
@@ -41,21 +50,44 @@
       }
     }
   },
-  "places": {
-    "new": "Nouveau lieu"
-  },
-  "persons": {
-    "new": "Nouvelle Personne"
-  },
   "symbols": {
     "add": "connecter des symboles",
     "label": "Symbole",
     "new": "Nouveau symbole",
-    "new_service": "Nouveau service"
+    "notification": {
+      "new": "Nouvelle notification"
+    }
+  },
+  "toolboxes": {
+    "entities": {
+      "city": {
+        "label": "ville",
+        "tooltip": "le badge sur le canevas pour connecter une ville"
+      },
+      "department": {
+        "label": "département",
+        "tooltip": "le badge sur le canevas pour connecter un département"
+      },
+      "person": {
+        "label": "personne",
+        "tooltip": "le badge sur le canevas pour connecter une personne"
+      },
+      "place": {
+        "label": "lieu",
+        "tooltip": "le badge sur le canevas pour connecter un lieu"
+      }
+    },
+    "symbols": {
+      "notification": {
+        "label": "notification",
+        "tooltip": "le badge sur le canevas pour connecter une notification"
+      }
+    }
   },
   "tooltips": {
-    "toolbox_item": "Glissez-déposez le badge sur le canevas pour connecter",
-    "node_header": "Vous ne pouvez pas modifier ce lieu car vous n'êtes pas un gardien",
+    "person_node_anchor": "explorer le profil du perroquet appartenant à cette personne",
+    "place_node_anchor": "explorer le profil du perroquet appartenant à ce lieu",
+    "place_node_header": "Vous ne pouvez pas modifier ce lieu car vous n'êtes pas un gardien",
     "node_header_mine": "modifier",
     "node_header_mine_new": "créer"
   }

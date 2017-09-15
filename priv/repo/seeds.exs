@@ -20,41 +20,39 @@ alias Api.Map.{
 }
 
 Api.Accounts.create_user(%{
-  :email => "le@parede.com",
+  :email => "alex@gmail.com",
   :password => "foobar",
-  :username => "leparede",
+  :username => "alex",
 })
 
-Repo.insert!(%Place{
-  :city => "Bagnères-de-Bigorre",
-  :department => "Hautes-Pyrénées",
-  :latitude => 43.0682282223,
-  :longitude => 0.1339986988,
-  :title => "Le Parédé",
-})
-Api.Repo.insert!(%Place{
-  :city => "Uzès",
-  :department => "Gard",
-  :latitude => 44.2167,
-  :longitude => 4.2167,
-  :title => "foo",
+Api.Accounts.create_user(%{
+  :email => "claire@gmail.com",
+  :password => "foobar",
+  :username => "claire",
 })
 
-Repo.insert!(%Role{
+Api.Accounts.create_user(%{
+  :email => "gael@gmail.com",
+  :password => "foobar",
+  :username => "gael",
+})
+
+Api.Accounts.create_user(%{
+  :email => "rom.seguy@gmail.com",
+  :password => "foobar",
+  :username => "romain",
+})
+
+# Api.Map.create_place(%{ :city => "Bagnères-de-Bigorre", :department => "Hautes-Pyrénées", :latitude => 43.0682282223, :longitude => 0.1339986988, :title => "Le Parédé"})
+# Api.Map.create_place(%{ :city => "Uzès", :department => "Gard", :latitude => 44.2167, :longitude => 4.2167, :title => "Chez Romain"})
+
+Api.Accounts.create_role(%{
   :role_name => "Guardian"
 })
-Repo.insert!(%Role{
+Api.Accounts.create_role(%{
   :role_name => "Follower"
 })
 
-Api.Map.create_user_place(%{
-  user_id: 1,
-  place_id: 1,
-  role_id: 1
-})
-Api.Map.create_user_place(%{
-  user_id: 1,
-  place_id: 2,
-  role_id: 2
-})
+# Api.Map.create_user_place(%{ user_id: 1, place_id: 1, role_id: 1 })
+# Api.Map.create_user_place(%{ user_id: 1, place_id: 2, role_id: 2 })
 

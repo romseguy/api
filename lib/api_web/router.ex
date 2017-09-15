@@ -5,6 +5,7 @@ defmodule ApiWeb.Router do
     plug Guardian.Plug.VerifyHeader, realm: "Bearer"
     plug Guardian.Plug.LoadResource
     plug ApiWeb.Context
+    plug ApiWeb.Locale
   end
 
   scope "/graphql" do
