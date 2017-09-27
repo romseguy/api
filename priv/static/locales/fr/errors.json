@@ -11,6 +11,9 @@
   "place": {
     "fixForm": "Veuillez corriger le formulaire"
   },
+  "symbol": {
+    "fixForm": "Veuillez corriger le formulaire"
+  },
   "modal": {
     "offline": {
       "title": "Vous êtes hors-ligne",

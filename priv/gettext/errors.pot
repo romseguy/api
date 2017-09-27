@@ -11,6 +11,9 @@
 msgid "title"
 msgstr ""
 
+msgid "incorrect login credentials"
+msgstr ""
+
 ## From Ecto.Changeset.cast/4
 msgid "can't be blank"
 msgstr ""
@@ -21,6 +24,14 @@ msgstr ""
 
 ## From Ecto.Changeset.unique_constraint/3
 msgid "place name has already been taken"
+msgstr ""
+
+## From Ecto.Changeset.unique_constraint/3
+msgid "email has already been taken"
+msgstr ""
+
+## From Ecto.Changeset.unique_constraint/3
+msgid "username has already been taken"
 msgstr ""
 
 ## From Ecto.Changeset.put_change/3

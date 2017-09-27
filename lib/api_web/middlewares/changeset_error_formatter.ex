@@ -1,4 +1,3 @@
-require IEx
 defmodule ApiWeb.Middleware.ChangesetErrorFormatter do
   import ApiWeb.ErrorHelpers
 
@@ -11,7 +10,7 @@ defmodule ApiWeb.Middleware.ChangesetErrorFormatter do
   def format_changeset_error(errors) when is_list(errors) do
     cond do
       Enum.all?(errors, &is_changeset/1) -> Enum.flat_map(errors, &format_changeset_error/1)
-      Enum.all?(errors, &is_bitstring/1) -> errors
+      Enum.all?(errors, &is_bitstring/1) -> Enum.map(errors, &translate_error({&1, []}))
       Enum.all?(errors, &is_map/1) -> errors
       true -> Enum.flat_map(errors, &format_changeset_error/1)
     end

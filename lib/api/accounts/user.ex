@@ -17,8 +17,6 @@ defmodule Api.Accounts.User do
   ecto schema/struct for the users table
   """
   schema "users" do
-    #field :city, :string
-    #field :department, :string
     field :email, :string
     field :password, :string, virtual: true
     field :password_hash, :string
@@ -51,9 +49,9 @@ defmodule Api.Accounts.User do
     |> validate_required([:email])
     |> validate_length(:username, min: 1, max: 40)
     |> validate_length(:email, min: 3)
-    |> unique_constraint(:username, message: "Username already taken")
+    |> unique_constraint(:username, message: "username has already been taken")
     |> validate_email_format(:email)
-    |> unique_constraint(:email, message: "Email already taken")
+    |> unique_constraint(:email, message: "email has already been taken")
     |> downcase_user_email
   end
 

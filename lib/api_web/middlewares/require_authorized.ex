@@ -3,6 +3,7 @@ defmodule ApiWeb.Middleware.RequireAuthorized do
 
   @moduledoc """
   Middleware to require authenticated user
+  https://hexdocs.pm/absinthe/Absinthe.Middleware.html
   """
 
   def call(resolution, _config) do

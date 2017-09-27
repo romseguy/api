@@ -12,7 +12,7 @@ defmodule Api.Session do
 
     case check_password(user, attrs.password) do
       true -> {:ok, user}
-      _ -> {:error, "invalid_credentials"}
+      _ -> {:error, "incorrect login credentials"}
     end
   end
 

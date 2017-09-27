@@ -1,8 +1,9 @@
 {
-  "about": "À propos",
+  "about": "kézako ?",
   "app_title": "Pairroquet",
   "geosuggest_placeholder": "Rechercher une ville ou un village...",
   "loading": "Chargement...",
+  "my_profile": "Mon profil",
   "not_found": "La page que vous avez demandé n'existe pas",
   "or": "ou",
   "symbol": "Symbole"

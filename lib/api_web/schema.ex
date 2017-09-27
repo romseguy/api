@@ -24,10 +24,11 @@ defmodule ApiWeb.Schema do
   end
 
   @doc """
+  https://hexdocs.pm/absinthe/Absinthe.Middleware.html#module-the-callback
   handle and format changeset errors during mutations
                                      %{identifier: identifier}) when identifier in [:mutation, :blablba] do
   """
-  def middleware(middleware, _field, %{identifier: :mutation}) do
+  def middleware(middleware, _field, %Absinthe.Type.Object{identifier: :mutation}) do
     middleware ++ [ApiWeb.Middleware.ChangesetErrorFormatter]
   end
 

@@ -56,9 +56,26 @@ defmodule Api.Map.Resolvers do
         true -> Api.Map.update_place(Api.Map.get_place!(place_id), place_attrs)
       end
     end
+    @doc"""
+    DELETE place if current user is its creator
+    """
+    def delete(%{id: place_id}, %{context: %{current_user: %{id: current_user_id}}}) do
+      # todo: checks
+      place = Api.Map.get_place!(place_id)
+      Api.Map.delete_place(place)
+    end
   @doc"""
   UserPlace
   """
+    @doc"""
+    QUERY user_place by place title for current_user
+    """
+    def user_place(%{title: place_title}, %{context: %{current_user: current_user}}) do
+      Logger.info(place_title)
+      place = Api.Map.get_place!(%{title: place_title})
+      user_place = Api.Map.get_user_place!(current_user, place)
+      {:ok, Api.Repo.preload(user_place, [:user, :place, :role])}
+    end
     @doc"""
     CREATE user_place for current_user
     """
@@ -95,7 +112,7 @@ defmodule Api.Map.Resolvers do
     @doc"""
     QUERY user_places by username
     """
-    def my_user_places(%{username: username}, %{context: %{current_user: current_user}}) do
+    def user_places(%{username: username}, %{context: %{current_user: current_user}}) do
       user = Api.Accounts.get_user(%{username: username})
       user_places = Api.Map.list_user_places(user)
       {:ok, Api.Repo.preload(user_places, [:user, :place, :role])}
@@ -103,14 +120,14 @@ defmodule Api.Map.Resolvers do
     @doc"""
     QUERY user_places for current_user
     """
-    def my_user_places(_args, %{context: %{current_user: current_user}}) do
+    def user_places(_args, %{context: %{current_user: current_user}}) do
       user_places = Api.Map.list_user_places(current_user)
       {:ok, Api.Repo.preload(user_places, [:user, :place, :role])}
     end
     @doc"""
     QUERY user_places without current_user
     """
-    def my_user_places(_args, _info) do
+    def user_places(_args, _info) do
       {:ok, nil}
     end
     @doc"""

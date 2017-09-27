@@ -1,9 +1,10 @@
 {
+  "about": "Kézako ?",
   "current_position": "Votre position actuelle",
   "login": "connexion",
   "logout": "déconnexion",
   "map": "carte",
-  "my_profile": "Vous êtes sur le profil de votre perroquet",
+  "my_profile": "Vous êtes sur votre profil",
   "title": "Cliquez pour changer votre position",
   "tutorial": "tutoriel",
   "atom": {
@@ -18,9 +19,9 @@
   },
   "entityIcon": {
     "title": {
-      "city": "Vous êtes sur le profil du perroquet appartement à :",
-      "person": "Vous êtes sur le profil du perroquet appartenant à :",
-      "place": "Vous êtes sur le profil du perroquet appartenant à :"
+      "city": "Vous êtes sur le profil de la ville :",
+      "person": "Vous êtes sur le profil de la personne :",
+      "place": "Vous êtes sur le profil du lieu :"
     }
   },
   "location": {

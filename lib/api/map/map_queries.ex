@@ -21,13 +21,21 @@ defmodule Api.Map.Queries do
     @doc"""
     UserPlace
     """
+    @desc "QUERY the relationship between a place and current or given user"
+    field :my_place, type: :user_place do
+      arg :title, non_null(:string)
+      arg :username, :string
+
+      resolve &Resolvers.user_place/2
+    end
+    @doc"""
+    [UserPlace]
+    """
     @desc "QUERY my relationships with places"
     field :my_places, type: list_of(:user_place) do
       arg :username, :string
 
-      resolve &Resolvers.my_user_places/2
+      resolve &Resolvers.user_places/2
     end
-
-
   end
 end

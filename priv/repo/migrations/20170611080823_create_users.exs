@@ -11,6 +11,5 @@ defmodule Api.Repo.Migrations.CreateApi.Accounts.User do
     end
     create index(:users, [:email], unique: true)
     create index(:users, [:username], unique: true)
-
   end
 end

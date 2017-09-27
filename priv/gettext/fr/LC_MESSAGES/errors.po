@@ -6,13 +6,15 @@
 ##
 ## Use `mix gettext.extract --merge` or `mix gettext.merge`
 ## to merge POT files into PO files.
-
 msgid ""
 msgstr ""
 "Language: fr\n"
 
 msgid "title"
 msgstr ""
+
+msgid "incorrect login credentials"
+msgstr "les identifiants saisis sont incorrects"
 
 msgid "can't be blank"
 msgstr ""
@@ -22,6 +24,14 @@ msgstr ""
 
 msgid "place name has already been taken"
 msgstr "le nom de lieu \"%{value}\" a déjà été pris"
+
+## From Ecto.Changeset.unique_constraint/3
+msgid "email has already been taken"
+msgstr "l'email saisi est déjà utilisé"
+
+## From Ecto.Changeset.unique_constraint/3
+msgid "username has already been taken"
+msgstr "le nom d'utilisateur saisi est déjà utilisé"
 
 msgid "is invalid"
 msgstr ""

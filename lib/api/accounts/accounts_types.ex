@@ -20,10 +20,17 @@ defmodule Api.Accounts.Types do
 
   object :role do
     field :id, :integer
-    field :role_name, :string
-    #default resolver looks like this:
-    #do
-    #  resolve fn role, _ , _ ->
+    field :role_name, :string #do
+    #
+    ## we can have an arg:
+    #  arg :age, :integer
+    ## query would be:
+    #  {role {role_name(age: 497}}
+    #
+    ## default resolver is:
+    #  resolve fn role, args , _ ->
+    ##   `role` is the resolved tuple from the query returning that object type
+    ##   could do something with `args.age` here?
     #    {:ok, Map.get(role, :role_name)}
     #  end
     #end

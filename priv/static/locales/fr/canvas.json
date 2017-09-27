@@ -27,6 +27,26 @@
     "zoom_in": "Zoomer",
     "zoom_out": "Dézoomer"
   },
+  "confirm": {
+    "delete_place": {
+      "title": "Attention !",
+      "content": "Comme vous êtes le créateur du lieu « {{name}} », vous avez le choix entre :",
+      "options": {
+        "both": {
+          "label": "supprimer complètement le lieu :",
+          "labels": [
+            "une notification de préavis associée à un commentaire de votre choix sera envoyée aux entités actuellement connectées au lieu",
+            "une notification de confirmation sera envoyée aux personnes gardiennes du lieu"
+          ],
+          "submit_label": "Supprimer {{name}}"
+        },
+        "only": {
+          "label": "vous déconnecter du lieu : vous pourrez recréer la connexion ultérieurement",
+          "submit_label": "Se déconnecter uniquement"
+        }
+      }
+    }
+  },
   "modes": {
     "discovery": {
       "labels": {
@@ -44,9 +64,9 @@
     },
     "notification": {
       "labels": {
-        "active": "Mode notification activé",
-        "disabled": "Mode notification non autorisé",
-        "inactive": "Mode notification désactivé"
+        "active": "Mode perroquet activé",
+        "disabled": "Mode perroquet non autorisé",
+        "inactive": "Mode perroquet désactivé"
       }
     }
   },
@@ -54,8 +74,8 @@
     "add": "connecter des symboles",
     "label": "Symbole",
     "new": "Nouveau symbole",
-    "notification": {
-      "new": "Nouvelle notification"
+    "parrot": {
+      "new": "Nouveau perroquet"
     }
   },
   "toolboxes": {
@@ -78,15 +98,16 @@
       }
     },
     "symbols": {
-      "notification": {
-        "label": "notification",
-        "tooltip": "le badge sur le canevas pour connecter une notification"
+      "empty": "Aucun symbole disponible",
+      "parrot": {
+        "label": "perroquet",
+        "tooltip": "le badge sur le canevas pour connecter un perroquet"
       }
     }
   },
   "tooltips": {
-    "person_node_anchor": "explorer le profil du perroquet appartenant à cette personne",
-    "place_node_anchor": "explorer le profil du perroquet appartenant à ce lieu",
+    "person_node_anchor": "explorer le profil de la personne",
+    "place_node_anchor": "explorer le profil du lieu",
     "place_node_header": "Vous ne pouvez pas modifier ce lieu car vous n'êtes pas un gardien",
     "node_header_mine": "modifier",
     "node_header_mine_new": "créer"

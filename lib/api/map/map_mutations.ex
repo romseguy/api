@@ -23,6 +23,13 @@ defmodule Api.Map.Mutations do
       middleware RequireAuthorized
       resolve &Resolvers.update/2
     end
+    @desc "DELETE a place"
+    field :delete_place, type: :place do
+      arg :id, non_null(:integer)
+
+      middleware RequireAuthorized
+      resolve &Resolvers.delete/2
+    end
     @doc"""
     UserPlace
     """
