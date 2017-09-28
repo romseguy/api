@@ -6,21 +6,27 @@
     "edit_selected": "Modifier l'entité sélectionnée",
     "delete_confirm": "Veuillez confirmer la suppression de l'entité :",
     "city": {
+      "label": "ville",
       "new": "Nouvelle ville"
     },
     "department": {
+      "label": "département",
       "new": "Nouveau département"
     },
     "person": {
+      "label": "personne",
       "new": "Nouvelle personne"
     },
     "place": {
+      "label": "lieu",
       "new": "Nouveau lieu"
     }
   },
   "buttons": {
     "delete_selected_entity": "Supprimer l'entité sélectionné",
     "delete_selected_symbol": "Supprimer le symbole sélectionné",
+    "details": "Détails {{type}}",
+    "details_show": "Afficher les détails",
     "edit_selected_entity": "Modifier l'entité sélectionné",
     "edit_selected_symbol": "Modifier le symbole sélectionné",
     "help": "Afficher l'aide",
@@ -35,13 +41,13 @@
         "both": {
           "label": "supprimer complètement le lieu :",
           "labels": [
-            "une notification de préavis associée à un commentaire de votre choix sera envoyée aux entités actuellement connectées au lieu",
-            "une notification de confirmation sera envoyée aux personnes gardiennes du lieu"
+            "une notification de préavis associée à un commentaire de votre choix est envoyée aux personnes connectées au lieu",
+            "une notification de confirmation est envoyée aux gardiens du lieu"
           ],
           "submit_label": "Supprimer {{name}}"
         },
         "only": {
-          "label": "vous déconnecter du lieu : vous pourrez recréer la connexion ultérieurement",
+          "label": "vous déconnecter du lieu : vous pourrez vous y reconnecter ultérieurement",
           "submit_label": "Se déconnecter uniquement"
         }
       }

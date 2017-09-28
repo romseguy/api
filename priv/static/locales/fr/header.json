@@ -6,6 +6,7 @@
   "map": "carte",
   "my_profile": "Vous êtes sur votre profil",
   "title": "Cliquez pour changer votre position",
+  "title_city": "Vous êtes à {{city}}",
   "tutorial": "tutoriel",
   "atom": {
     "title": {
@@ -26,7 +27,7 @@
   },
   "location": {
     "title": {
-      "default": "Cliquez pour revenir à votre position",
+      "default": "Revenir à {{city}}",
       "place": "Cliquez pour afficher ce lieu sur la carte"
     }
   },

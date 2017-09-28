@@ -1,6 +1,4 @@
 defmodule Api.Map.Resolvers do
-  import Logger
-
   @doc"""
   Place
   """
@@ -71,7 +69,6 @@ defmodule Api.Map.Resolvers do
     QUERY user_place by place title for current_user
     """
     def user_place(%{title: place_title}, %{context: %{current_user: current_user}}) do
-      Logger.info(place_title)
       place = Api.Map.get_place!(%{title: place_title})
       user_place = Api.Map.get_user_place!(current_user, place)
       {:ok, Api.Repo.preload(user_place, [:user, :place, :role])}
@@ -102,7 +99,6 @@ defmodule Api.Map.Resolvers do
     def delete_user_place(%{place_id: place_id}, %{context: %{current_user: current_user}}) do
       place = Api.Map.get_place!(place_id)
       user_place = Api.Map.get_user_place!(current_user, place)
-      Logger.debug(inspect(user_place))
       Api.Map.delete_user_place(user_place)
       {:ok, user_place}
     end

@@ -6,5 +6,10 @@
   "my_profile": "Mon profil",
   "not_found": "La page que vous avez demandé n'existe pas",
   "or": "ou",
-  "symbol": "Symbole"
+  "symbol": "Symbole",
+  "prefixes": {
+    "place": "du",
+    "person": "de la",
+    "profile": "de"
+  }
 }
