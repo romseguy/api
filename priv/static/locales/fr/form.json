@@ -27,7 +27,6 @@
   "setLocation": {
     "header": "Définissez votre position",
     "city": "Choisissez la ville ou le village où vous êtes",
-    "map": "Cliquez à l'endroit où est situé le lieu :",
     "save": "Enregistrer"
   },
   "symbol": {
@@ -36,8 +35,8 @@
       "description": "Comme vous n'êtes pas gardien de ce lieu, le perroquet sera soumis à validation par un des gardiens du lieu. Une fois validé, celui-ci apparaitra sur le profil du lieu et le message sera envoyé comme configuré ci-dessous.",
       "label": "perroquet",
       "header": {
-        "add": "Connecter un {{symbolType}} au lieu : {{placeTitle}}",
-        "edit": "Modifier un {{symbolType}} du lieu : {{placeTitle}}"
+        "add": "Connecter un perroquet au lieu : {{placeTitle}}",
+        "edit": "Modifier le perroquet du lieu : {{placeTitle}}"
       },
       "fields": {
         "body": "Corps du message :",

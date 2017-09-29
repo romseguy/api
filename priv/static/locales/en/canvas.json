@@ -1,0 +1,119 @@
+{
+  "entities": {
+    "label": "Entity",
+    "label_plural": "Entities",
+    "add": "connect entities",
+    "city": {
+      "label": "city",
+      "new": "New city"
+    },
+    "department": {
+      "label": "department",
+      "new": "New department"
+    },
+    "person": {
+      "label": "person",
+      "new": "New person"
+    },
+    "place": {
+      "label": "place",
+      "new": "New place"
+    }
+  },
+  "buttons": {
+    "delete_selected_entity": "Delete selected entity",
+    "delete_selected_symbol": "Delete selected symbol",
+    "details": "{{type}} details",
+    "details_show": "Show details",
+    "edit_selected_entity": "Edit selected entity",
+    "edit_selected_symbol": "Edit selected symbol",
+    "help": "Show help",
+    "zoom_in": "Zoom in",
+    "zoom_out": "Zoom out"
+  },
+  "confirm": {
+    "delete_place": {
+      "title": "Warning !",
+      "content": "You have created « {{name}} », you can either:",
+      "options": {
+        "both": {
+          "label": "permanently delete the place:",
+          "labels": [
+            "a parrot is sent to the persons connected to the place",
+            "a pigeon is sent to the place guardians in order to confirm the place deletion"
+          ],
+          "submit_label": "Delete {{name}}"
+        },
+        "only": {
+          "label": "disconnect the place: you will be able to reconnect it later",
+          "submit_label": "Disconnect"
+        }
+      }
+    }
+  },
+  "modes": {
+    "discovery": {
+      "labels": {
+        "active": "Exploration mode enabled",
+        "disabled": "Exploration mode disallowed",
+        "inactive": "Exploration mode disabled"
+      }
+    },
+    "edit": {
+      "labels": {
+        "active": "Mode édition enabled",
+        "disabled": "Mode édition disallowed",
+        "inactive": "Mode édition disabled"
+      }
+    },
+    "notification": {
+      "labels": {
+        "active": "Mode perroquet enabled",
+        "disabled": "Mode perroquet disallowed",
+        "inactive": "Mode perroquet disabled"
+      }
+    }
+  },
+  "symbols": {
+    "add": "connect symbols",
+    "label": "Symbol",
+    "new": "New symbol",
+    "parrot": {
+      "new": "New parrot"
+    }
+  },
+  "toolboxes": {
+    "entities": {
+      "city": {
+        "label": "city",
+        "tooltip": "the badge over the canvas to connect a city"
+      },
+      "department": {
+        "label": "department",
+        "tooltip": "the badge over the canvas to connect a department"
+      },
+      "person": {
+        "label": "person",
+        "tooltip": "the badge over the canvas to connect a person"
+      },
+      "place": {
+        "label": "place",
+        "tooltip": "the badge over the canvas to connect a place"
+      }
+    },
+    "symbols": {
+      "empty": "No symbols available",
+      "parrot": {
+        "label": "parrot",
+        "tooltip": "the badge over the canvas to connect a parrot"
+      }
+    }
+  },
+  "tooltips": {
+    "person_node_anchor": "explore person profile",
+    "place_node_anchor": "explore place profile",
+    "place_node_header": "You can't edit this place because you are not a guardian",
+    "node_header_mine": "edit",
+    "node_header_mine_new": "create"
+  }
+}

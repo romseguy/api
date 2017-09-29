@@ -1,23 +1,13 @@
 {
-  "about": "Kézako ?",
-  "current_position": "Votre position actuelle",
+  "help": "Afficher l'aide",
   "login": "connexion",
   "logout": "déconnexion",
   "map": "carte",
   "my_profile": "Vous êtes sur votre profil",
+  "my_profile_go": "Aller sur mon profil",
   "title": "Cliquez pour changer votre position",
   "title_city": "Vous êtes à {{city}}",
   "tutorial": "tutoriel",
-  "atom": {
-    "title": {
-      "default": ""
-    }
-  },
-  "connect": {
-    "title": {
-      "place": "Cliquez pour vous connecter à ce lieu"
-    }
-  },
   "entityIcon": {
     "title": {
       "city": "Vous êtes sur le profil de la ville :",
@@ -30,9 +20,5 @@
       "default": "Revenir à {{city}}",
       "place": "Cliquez pour afficher ce lieu sur la carte"
     }
-  },
-  "role": {
-    "1": "gardien de",
-    "2": "membre de"
   }
 }

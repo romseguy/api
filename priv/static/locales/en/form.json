@@ -1,0 +1,59 @@
+{
+  "failed_loading": "The form could not be loaded, are you connected to the Internet?",
+  "auth": {
+    "department_confirm": "Please select your main department:",
+    "email": "Email address",
+    "forgotten": "Forgotten password?",
+    "forgotten_confirm": "Get a password recovery email",
+    "login": "Login",
+    "logout": "Logout",
+    "password": "Password",
+    "password2": "Confirmation",
+    "register": "Register",
+    "username": "Username"
+  },
+  "place": {
+    "city": "Select the city of the place location:",
+    "create": "New place",
+    "title_add": "Connect a place to my profile",
+    "title_edit": "Edit",
+    "map": "(Optional) Click at the place location :",
+    "name": "Place name :",
+    "select": "Existing place",
+    "save": "Save",
+    "select_save": "Connect",
+    "select_view": "View"
+  },
+  "setLocation": {
+    "header": "Set your location",
+    "city": "Select the city of your current location",
+    "save": "Save"
+  },
+  "symbol": {
+    "save": "Save",
+    "parrot": {
+      "description": "Comme vous n'êtes pas gardien de ce lieu, le perroquet sera soumis à validation par un des gardiens du lieu. Une fois validé, celui-ci apparaitra sur le profil du lieu et le message sera envoyé comme configuré ci-dessous.",
+      "label": "parrot",
+      "header": {
+        "add": "Connect a parrot to the place: {{placeTitle}}",
+        "edit": "Edit the parrot of the place: {{placeTitle}}"
+      },
+      "fields": {
+        "body": "Message body:",
+        "title": "Message title:"
+      }
+    }
+  },
+  "user": {
+    "create": {
+      "label": "New user",
+      "save": "Invite"
+    },
+    "header_add": "Connect a person",
+    "header_edit": "Edit",
+    "select": {
+      "label": "Existing user",
+      "save": "Connect"
+    }
+  }
+}

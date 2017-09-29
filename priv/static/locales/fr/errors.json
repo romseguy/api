@@ -26,8 +26,6 @@
   },
   "register": {
     "passwordsNotMatch": "Les mots de passe ne correspondent pas",
-    "unavailable_email": "Cet e-mail est déjà utilisé",
-    "username_too_long": "Ce nom d'utilisateur est trop long",
-    "unavailable_username": "Ce nom d'utilisateur est déjà utilisé"
+    "username_too_long": "Ce nom d'utilisateur est trop long"
   }
 }

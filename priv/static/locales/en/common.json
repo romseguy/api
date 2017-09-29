@@ -1,10 +1,16 @@
 {
-  "email": "E-mail address",
-  "login": "Login",
-  "new_place": "New Place",
+  "about": "What is it?",
+  "app_title": "Pearrot",
+  "geosuggest_placeholder": "Search for a city...",
+  "loading": "Loading...",
+  "my_profile": "My profile",
+  "not_found": "The page you are looking for does not exist",
   "or": "or",
-  "password": "Password",
-  "password2": "Confirmation",
-  "register": "Register",
-  "username": "Username"
+  "symbol": "Symbol",
+  "version": "Alpha version: data may be wiped any time",
+  "prefixes": {
+    "place": "of",
+    "person": "of the",
+    "profile": "of"
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "help": "Show help",
+  "login": "login",
+  "logout": "logout",
+  "map": "map",
+  "my_profile": "You are viewing your profile",
+  "my_profile_go": "Go to my profile",
+  "title": "Click to change your location",
+  "title_city": "You are in {{city}}",
+  "tutorial": "tutorial",
+  "entityIcon": {
+    "title": {
+      "city": "You are viewing the profile of the city:",
+      "person": "You are viewing the profile of the person:",
+      "place": "You are viewing the profile of the place:"
+    }
+  },
+  "location": {
+    "title": {
+      "default": "Go back to {{city}}",
+      "place": "Click to show this place on the map"
+    }
+  }
+}

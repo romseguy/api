@@ -1,10 +1,8 @@
 {
   "entities": {
     "label": "Entité",
+    "label_plural": "Entités",
     "add": "connecter des entités",
-    "delete_selected": "Supprimer l'entité sélectionnée",
-    "edit_selected": "Modifier l'entité sélectionnée",
-    "delete_confirm": "Veuillez confirmer la suppression de l'entité :",
     "city": {
       "label": "ville",
       "new": "Nouvelle ville"
@@ -25,7 +23,7 @@
   "buttons": {
     "delete_selected_entity": "Supprimer l'entité sélectionné",
     "delete_selected_symbol": "Supprimer le symbole sélectionné",
-    "details": "Détails {{type}}",
+    "details": "Détails {{prefix}} {{type}}",
     "details_show": "Afficher les détails",
     "edit_selected_entity": "Modifier l'entité sélectionné",
     "edit_selected_symbol": "Modifier le symbole sélectionné",
@@ -39,16 +37,16 @@
       "content": "Comme vous êtes le créateur du lieu « {{name}} », vous avez le choix entre :",
       "options": {
         "both": {
-          "label": "supprimer complètement le lieu :",
+          "label": "supprimer définitivement le lieu :",
           "labels": [
-            "une notification de préavis associée à un commentaire de votre choix est envoyée aux personnes connectées au lieu",
-            "une notification de confirmation est envoyée aux gardiens du lieu"
+            "un perroquet est envoyé aux personnes connectées au lieu",
+            "un pigeon est est envoyé aux gardiens du lieu pour confirmer la suppression définitive du lieu"
           ],
           "submit_label": "Supprimer {{name}}"
         },
         "only": {
-          "label": "vous déconnecter du lieu : vous pourrez vous y reconnecter ultérieurement",
-          "submit_label": "Se déconnecter uniquement"
+          "label": "déconnecter le lieu : vous pouvez le reconnecter ultérieurement",
+          "submit_label": "Déconnecter"
         }
       }
     }

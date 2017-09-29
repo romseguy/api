@@ -1,13 +1,31 @@
 {
   "required": "This field is required",
   "auth": {
-    "fixForm": "Please correct the form",
-    "email": "E-mail is required",
-    "password": "Password is required",
-    "password2": "Password confirmation is required"
+    "fixForm": "Please fix the form",
+    "email": "An email address is required",
+    "email_invalid": "This email address is invalid",
+    "password": "A password is required",
+    "password_too_short": "The password must have at least 6 characters",
+    "password2": "Password confirm is required"
+  },
+  "place": {
+    "fixForm": "Please fix the form"
+  },
+  "symbol": {
+    "fixForm": "Please fix the form"
+  },
+  "modal": {
+    "offline": {
+      "title": "You are offline",
+      "content": "Please connect to the Internet"
+    },
+    "unknown": {
+      "content": "Admin has been warned",
+      "title": "An unknown error occured"
+    }
   },
   "register": {
-    "unavailable_email": "E-mail is already taken",
-    "passwordsNotMatch": "Passwords do not match"
+    "passwordsNotMatch": "Passwords do not match",
+    "username_too_long": "This username is too long"
   }
 }
