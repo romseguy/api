@@ -5,7 +5,7 @@
   "map": "carte",
   "my_profile": "Vous êtes sur votre profil",
   "my_profile_go": "Aller sur mon profil",
-  "title": "Cliquez pour changer votre position",
+  "title": "Changer votre position",
   "title_city": "Vous êtes à {{city}}",
   "tutorial": "tutoriel",
   "entityIcon": {
@@ -18,7 +18,7 @@
   "location": {
     "title": {
       "default": "Revenir à {{city}}",
-      "place": "Cliquez pour afficher ce lieu sur la carte"
+      "place": "Afficher ce lieu sur la carte"
     }
   }
 }

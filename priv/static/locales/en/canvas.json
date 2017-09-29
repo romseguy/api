@@ -23,7 +23,7 @@
   "buttons": {
     "delete_selected_entity": "Delete selected entity",
     "delete_selected_symbol": "Delete selected symbol",
-    "details": "{{type}} details",
+    "details": "Details",
     "details_show": "Show details",
     "edit_selected_entity": "Edit selected entity",
     "edit_selected_symbol": "Edit selected symbol",

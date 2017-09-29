@@ -7,10 +7,5 @@
   "not_found": "La page que vous avez demandé n'existe pas",
   "or": "ou",
   "symbol": "Symbole",
-  "version": "Version alpha : les données peuvent être effacées à tout moment",
-  "prefixes": {
-    "place": "du",
-    "person": "de la",
-    "profile": "de"
-  }
+  "version": "Version alpha : les données peuvent être effacées à tout moment"
 }

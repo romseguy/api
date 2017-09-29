@@ -3,14 +3,9 @@
   "app_title": "Pearrot",
   "geosuggest_placeholder": "Search for a city...",
   "loading": "Loading...",
-  "my_profile": "My profile",
+  "my_profile": "my profile",
   "not_found": "The page you are looking for does not exist",
   "or": "or",
   "symbol": "Symbol",
-  "version": "Alpha version: data may be wiped any time",
-  "prefixes": {
-    "place": "of",
-    "person": "of the",
-    "profile": "of"
-  }
+  "version": "Alpha version: data may be wiped any time"
 }
