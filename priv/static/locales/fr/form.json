@@ -10,6 +10,7 @@
     "password": "Mot de passe",
     "password2": "Confirmation",
     "register": "Inscription",
+    "title": "Authentification",
     "username": "Nom d'utilisateur"
   },
   "place": {
