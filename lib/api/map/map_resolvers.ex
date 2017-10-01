@@ -70,8 +70,10 @@ defmodule Api.Map.Resolvers do
     """
     def user_place(%{title: place_title}, %{context: %{current_user: current_user}}) do
       place = Api.Map.get_place!(%{title: place_title})
-      user_place = Api.Map.get_user_place!(current_user, place)
-      {:ok, Api.Repo.preload(user_place, [:user, :place, :role])}
+      case Api.Map.get_user_place(current_user, place) do
+        nil -> {:ok, nil}
+        user_place -> {:ok, Api.Repo.preload(user_place, [:user, :place, :role])}
+      end
     end
     @doc"""
     CREATE user_place for current_user

@@ -155,14 +155,14 @@ defmodule Api.Map do
 
   """
   def get_user_place!(id), do: Repo.get!(UserPlace, id)
-  def get_user_place!(user_id, place_id) when is_integer(user_id) and is_integer(place_id) do
+  def get_user_place(%User{} = user, %Place{} = place) do
+    get_user_place(user.id, place.id)
+  end
+  def get_user_place(user_id, place_id) when is_integer(user_id) and is_integer(place_id) do
     UserPlace
     |> where(place_id: ^place_id)
     |> where(user_id: ^user_id)
-    |> Repo.one!
-  end
-  def get_user_place!(%User{} = user, %Place{} = place) do
-    get_user_place!(user.id, place.id)
+    |> Repo.one
   end
 
   @doc """
