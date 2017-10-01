@@ -88,9 +88,12 @@ defmodule Api.Map.Resolvers do
       user_places = user_places_attrs
       |> Enum.filter(&(Map.has_key?(&1, :place_id)))
       |> Enum.map(fn %{place_id: place_id, x: x, y: y} ->
-        {:ok, user_place} = Api.Map.get_user_place!(current_user_id, place_id)
-        |> Api.Map.update_user_place(%{x: x, y: y})
-        user_place
+        case Api.Map.get_user_place(current_user_id, place_id) do
+          nil -> nil
+          user_place ->
+            Api.Map.update_user_place(user_place, %{x: x, y: y})
+            {:ok, user_place}
+        end
       end)
 
       {:ok, user_places}
@@ -100,7 +103,7 @@ defmodule Api.Map.Resolvers do
     """
     def delete_user_place(%{place_id: place_id}, %{context: %{current_user: current_user}}) do
       place = Api.Map.get_place!(place_id)
-      user_place = Api.Map.get_user_place!(current_user, place)
+      user_place = Api.Map.get_user_place(current_user, place)
       Api.Map.delete_user_place(user_place)
       {:ok, user_place}
     end
@@ -135,7 +138,7 @@ defmodule Api.Map.Resolvers do
       user_places = user_places_attrs
       |> Enum.filter(&(Map.has_key?(&1, :place_id)))
       |> Enum.map(fn %{place_id: place_id, x: x, y: y} ->
-        {:ok, user_place} = Api.Map.get_user_place!(current_user_id, place_id)
+        {:ok, user_place} = Api.Map.get_user_place(current_user_id, place_id)
         |> Api.Map.update_user_place(%{x: x, y: y})
         user_place
       end)
